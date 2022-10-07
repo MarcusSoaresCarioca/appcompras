@@ -14,27 +14,32 @@ const styles = StyleSheet.create({
     },
 
     divImg:{
-        width:170,
-        height:170
+        width:200,
+        height:200
     },
 
     divInputs:{
-        flex:1,
+        flex:1.5,
         flexDirection:'row',
+
     },
 
     divInput:{
         flex:1,
         backgroundColor:'#0107FF',
         alignItems:'center',
-        justifyContent:'center'
+        justifyContent:'center',
+        
     },
 
     input:{
         backgroundColor:'#fff',
-        width:150,
+        width:200,
         height:50,
         borderRadius:20,
+        paddingLeft:60,
+        fontSize:20,
+        margin:4
         
     },
 
@@ -48,7 +53,7 @@ const styles = StyleSheet.create({
     btn:{
         width:50,
         height:50,
-        borderRadius:20,
+        borderRadius:50,
         backgroundColor:'#5198FF',
         alignItems:'center',
         justifyContent:'center'
@@ -60,6 +65,25 @@ const styles = StyleSheet.create({
         borderTopColor:'#fff',
         borderTopWidth:5
     },
+
+    divFastList:{
+        borderRadius:20,
+        backgroundColor:"#5198FF",
+        width:"97%",
+        height:60,
+        marginLeft:5,
+        alignItems:'center',
+        justifyContent:'space-around',
+        marginTop:10,
+        flexDirection:'row'
+    },
+
+    txtLista:{
+        fontSize:26,
+        color:"#fff"
+    },
+
+    
 
 })
 

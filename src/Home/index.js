@@ -1,8 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, FlatList, TouchableOpacity } from 'react-native';
 import styles from './style';
 import { AntDesign } from '@expo/vector-icons';
+
 
 
 export default function Home() {
@@ -20,10 +21,11 @@ export default function Home() {
       setProdutos(null);
     }
 
-    else {
-      alert('Preencha o campo')
-    }
+    else (
+      alert('Preencha o Campo')
+    )
   }
+
 
   return (
     <View style={styles.container}>
@@ -39,13 +41,13 @@ export default function Home() {
             value={produtos}
             onChangeText={setProdutos}
             keyboardType='default'>
-
           </TextInput>
+
         </View>
 
         <View style={styles.divBtn}>
           <TouchableOpacity style={styles.btn} onPress={adicionar}>
-            <AntDesign name="plus" size={27} color="#fff" />
+            <AntDesign name="plus" size={35} color="#fff" />
           </TouchableOpacity>
         </View>
       </View>
@@ -57,14 +59,19 @@ export default function Home() {
           keyExtractor={item => item.id}
           renderItem={({ item }) => {
             return (
-              <View style={item.tipo === 1 ? styles.itemListaReceita : styles.itemListaDespesa}>
-                <Text style={styles.txtTipo}>{item.tipo === 1 ? "Receita" : "Despesas"}</Text>
-                <Text style={styles.valorItem}> {item.tipo === 1 ? "R$" : "R$-"}{item.valor}</Text>
+              <View style={styles.divFastList}>
+                <View style={styles.listIcon}>
+                  <TouchableOpacity>
+                    <AntDesign name="minuscircleo" size={24} color="#EBA456" />
+                  </TouchableOpacity>
+                </View>
+                <View>
+                  <Text style={styles.txtLista}>{item.valor}</Text>
+                </View>
+
               </View>
             )
           }}>
-
-
         </FlatList>
       </View>
     </View>
