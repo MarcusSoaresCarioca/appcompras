@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     },
 
     divInputs:{
-        flex:1.5,
+        flex:1.6,
         flexDirection:'row',
 
     },
@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
         width:"97%",
         height:60,
         marginLeft:5,
+        paddingHorizontal:10,
         alignItems:'center',
         justifyContent:'space-around',
         marginTop:10,
@@ -80,8 +81,10 @@ const styles = StyleSheet.create({
 
     txtLista:{
         fontSize:26,
-        color:"#fff"
+        color:"#fff",
     },
+
+    
 
     
 

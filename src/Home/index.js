@@ -12,18 +12,38 @@ export default function Home() {
   const [lista, setLista] = useState([]);
 
   function adicionar() {
+
     if (produtos !== null && produtos !== '') {
-      let numeroAl = 50 * Math.random(2)
-      setLista((arr) => [...arr, {
-        id: numeroAl,
-        valor: produtos,
-      }])
-      setProdutos(null);
+      const item = lista.find(r => r.nome === produtos)
+      if (!item) {
+        let numeroAl = 50 * Math.random(2)
+        setLista((arr) => [...arr, {
+          id: numeroAl,
+          nome: produtos,
+        }])
+        setProdutos(null);
+      }
+      else {
+        alert("Ja tem esse Produto na sua lista")
+      }
+    } else{
+      alert('Digite um nome do produto')
     }
 
-    else (
-      alert('Preencha o Campo')
-    )
+  }
+
+  function selecionar (id){
+  const item = lista.find(r => r.id === id)
+  setProdutos(item.nome)
+  const novaLista = lista.filter(r => r.id !== id)
+  setLista(novaLista)
+  if(novaLista.length === 0){
+    alert('Finalizado')
+    setProdutos(null)
+  }
+  else{
+    setProdutos(item.nome)
+  }
   }
 
 
@@ -42,7 +62,6 @@ export default function Home() {
             onChangeText={setProdutos}
             keyboardType='default'>
           </TextInput>
-
         </View>
 
         <View style={styles.divBtn}>
@@ -59,17 +78,11 @@ export default function Home() {
           keyExtractor={item => item.id}
           renderItem={({ item }) => {
             return (
-              <View style={styles.divFastList}>
-                <View style={styles.listIcon}>
-                  <TouchableOpacity>
-                    <AntDesign name="minuscircleo" size={24} color="#EBA456" />
+                  <TouchableOpacity style={styles.divFastList} onPress={() => selecionar(item.id)}>
+                    <AntDesign name="minuscircleo" size={30} color="#EBA456" />
+                    <Text style={styles.txtLista}>{item.nome}</Text>
                   </TouchableOpacity>
-                </View>
-                <View>
-                  <Text style={styles.txtLista}>{item.valor}</Text>
-                </View>
-
-              </View>
+              
             )
           }}>
         </FlatList>
