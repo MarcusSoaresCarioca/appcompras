@@ -74,7 +74,11 @@ export default function Home() {
       <View style={styles.divLista}>
         <FlatList
           style={{ width: '100%' }}
-          data={lista}
+          data={lista.sort((a,b) => {
+            let x = a.nome
+            let y = b.nome
+            return x == y? 0: x > y ? 1 : -1
+          })}
           keyExtractor={item => item.id}
           renderItem={({ item }) => {
             return (
