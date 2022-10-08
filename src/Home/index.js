@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, Image, TextInput, FlatList, TouchableOpacity } from 'react-native';
 import styles from './style';
 import { AntDesign } from '@expo/vector-icons';
+import * as Animatable from 'react-native-animatable';
 
 
 
@@ -26,24 +27,24 @@ export default function Home() {
       else {
         alert("Ja tem esse Produto na sua lista")
       }
-    } else{
+    } else {
       alert('Digite um nome do produto')
     }
 
   }
 
-  function selecionar (id){
-  const item = lista.find(r => r.id === id)
-  setProdutos(item.nome)
-  const novaLista = lista.filter(r => r.id !== id)
-  setLista(novaLista)
-  if(novaLista.length === 0){
-    alert('Finalizado')
-    setProdutos(null)
-  }
-  else{
+  function selecionar(id) {
+    const item = lista.find(r => r.id === id)
     setProdutos(item.nome)
-  }
+    const novaLista = lista.filter(r => r.id !== id)
+    setLista(novaLista)
+    if (novaLista.length === 0) {
+      alert('Finalizado')
+      setProdutos(null)
+    }
+    else {
+      setProdutos(item.nome)
+    }
   }
 
 
@@ -74,19 +75,24 @@ export default function Home() {
       <View style={styles.divLista}>
         <FlatList
           style={{ width: '100%' }}
-          data={lista.sort((a,b) => {
+          data={lista.sort((a, b) => {
             let x = a.nome
             let y = b.nome
-            return x == y? 0: x > y ? 1 : -1
+            return x == y ? 0 : x > y ? 1 : -1
           })}
           keyExtractor={item => item.id}
           renderItem={({ item }) => {
             return (
-                  <TouchableOpacity style={styles.divFastList} onPress={() => selecionar(item.id)}>
-                    <AntDesign name="minuscircleo" size={30} color="#EBA456" />
-                    <Text style={styles.txtLista}>{item.nome}</Text>
-                  </TouchableOpacity>
-              
+              <Animatable.View animation='flipInX' iterationCount={1}>
+              <TouchableOpacity style={styles.divFastList} onPress={() => selecionar(item.id)}>
+                <AntDesign name="minuscircleo" size={30} color="#EBA456" />
+                <Text style={styles.txtLista}>{item.nome}</Text>
+    
+              </TouchableOpacity>
+              </Animatable.View>
+
+
+
             )
           }}>
         </FlatList>
