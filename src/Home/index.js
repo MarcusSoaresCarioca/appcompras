@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, Image, TextInput, FlatList, TouchableOpacity } from 'react-native';
 import styles from './style';
 import { AntDesign } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
 
 
@@ -33,6 +34,10 @@ export default function Home() {
 
   }
 
+  function deletar (){
+    setLista(null)
+  }
+
   function selecionar(id) {
     const item = lista.find(r => r.id === id)
     setProdutos(item.nome)
@@ -46,6 +51,8 @@ export default function Home() {
       setProdutos(item.nome)
     }
   }
+
+ 
 
 
   return (
@@ -67,7 +74,11 @@ export default function Home() {
 
         <View style={styles.divBtn}>
           <TouchableOpacity style={styles.btn} onPress={adicionar}>
-            <AntDesign name="plus" size={35} color="#fff" />
+            <AntDesign name="plus" size={25} color="#fff" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.btn} onPress={deletar}>
+            <MaterialCommunityIcons name="delete" size={25} color="black" />
           </TouchableOpacity>
         </View>
       </View>

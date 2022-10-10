@@ -51,8 +51,9 @@ const styles = StyleSheet.create({
     },
 
     btn:{
-        width:50,
-        height:50,
+        width:40,
+        height:40,
+        margin:5,
         borderRadius:50,
         backgroundColor:'#5198FF',
         alignItems:'center',
