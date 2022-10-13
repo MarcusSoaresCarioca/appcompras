@@ -1,93 +1,117 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-
-    container:{
-        flex:1,
-        backgroundColor:'#fff'
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
-
-    divHeader:{
-        flex:4,
-        alignItems:'center',
-        justifyContent:'center'
+    divImg: {
+      height: 200,
+      width: "100%",
+      flexDirection: 'row',
+      justifyContent: 'center',
+      backgroundColor: "#fff"
     },
-
-    divImg:{
-        width:200,
-        height:200
+    imgTopo: {
+      width: 200,
+      height: 200,
+      marginLeft: -50
     },
-
-    divInputs:{
-        flex:1.6,
-        flexDirection:'row',
-
+    divEntrada: {
+      height: 80,
+      width: "100%",
+      flexDirection: 'row',
+      marginTop: 20,
+      justifyContent: 'space-around',
+      borderBottomWidth: 2, 
+      borderBottomColor: "#fff",
+          
     },
-
-    divInput:{
-        flex:1,
-        backgroundColor:'#0107FF',
-        alignItems:'center',
-        justifyContent:'center',
-        
+    input: {
+      fontSize: 28,
+      width: 250,
+      height: 60,
+      borderRadius: 20,
+      backgroundColor: "#fff",
+      textAlign: 'center'
     },
-
-    input:{
-        backgroundColor:'#fff',
-        width:200,
-        height:50,
-        borderRadius:20,
-        paddingLeft:60,
-        fontSize:20,
-        margin:4
-        
+    btnAdd: {
+      width: 60,
+      height: 60,
+      backgroundColor: '#2C87BF',
+      borderRadius: 72 / 2,
+      justifyContent: 'center',
+      alignItems: 'center'
     },
-
-    divBtn:{
-        flex:0.5,
-        backgroundColor:'#0107FF',
-        alignItems:'center',
-        justifyContent:'center'
+    itemProd: {
+      borderRadius: 20,
+      width: "90%",
+      height: 60,
+      flexDirection: 'row',
+      backgroundColor: "#2C87BF",
+      marginTop: 8,
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingHorizontal: 25,
+      alignSelf:'center'
     },
-
-    btn:{
-        width:50,
-        height:50,
-        borderRadius:50,
-        backgroundColor:'#5198FF',
-        alignItems:'center',
-        justifyContent:'center'
+    txtProd: {  
+      fontWeight: '800',
+      textAlign: 'center',
+      fontSize: 26,
+      color: '#fff',
+      height:40
     },
-
-    divLista:{
-        flex:6,
-        backgroundColor:'#0107FF',
-        borderTopColor:'#fff',
-        borderTopWidth:5
+    containerModal:{
+      flex:1,
+      
     },
-
-    divFastList:{
-        borderRadius:20,
-        backgroundColor:"#5198FF",
-        width:"97%",
-        height:60,
-        marginLeft:5,
-        paddingHorizontal:10,
-        alignItems:'center',
-        justifyContent:'space-around',
-        marginTop:10,
-        flexDirection:'row'
+    divTopoModal:{
+      height:100,
+      backgroundColor:'#fff',
+      alignItems:'center',
+      justifyContent:'center'
     },
-
-    txtLista:{
-        fontSize:26,
-        color:"#fff",
+    divFormModal:{
+      height:150,
+      backgroundColor:'#070575',
+      borderTopRightRadius:30,
+      borderTopLeftRadius:30
     },
+    divFooterModal:{
+      flex:1,
+      backgroundColor:'#070575',      
+    },
+    btnVoltar:{ 
+      width: 60,
+      height: 60,
+      backgroundColor: '#2C87BF',
+      borderRadius: 72 / 2,
+      justifyContent: 'center',
+      alignItems: 'center',
+      position:'absolute',
+      right:20,
+      bottom:20,    
+      
+    },
+    txtTopoModal:{
+      fontSize:30
+    },
+    btnAbrirModal:{
+      width: 60,
+      height: 60,
+      backgroundColor: '#2C87BF',
+      borderRadius: 72 / 2,
+      justifyContent: 'center',
+      alignItems: 'center',
+      position:'absolute',
+      top:130,
+      right:20, 
+    }
 
-    
+  });
 
-    
-
-})
-
-export default styles
+  export default styles;
+  
