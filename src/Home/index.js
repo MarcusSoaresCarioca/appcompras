@@ -10,6 +10,7 @@ const ItemAnimado = Animatable.createAnimatableComponent(TouchableOpacity);
 const ImagemAnimada = Animatable.createAnimatableComponent(Image)
 export default function Revisao() {
   const [nomeProd, setNomeProd] = useState(null)
+  const [preco, setPreco] = useState(null)
   const [lista, setLista] = useState([])
   const [stateModal, setStateModal] = useState(false)
 
@@ -61,6 +62,13 @@ export default function Revisao() {
       setNomeProd(null)
       alert("Finalizado")
     }
+  }
+
+  function somar (){
+      if(preco !== null && preco !== ""){
+
+      }
+      
   }
 
   return (
@@ -124,12 +132,23 @@ export default function Revisao() {
 
                <Text style={styles.txtProd}> 
                {item.nome}</Text>
+
+               <TextInput
+                placeholder='Preço' 
+                style={styles.inputList}
+                value={preco}
+                onChangeText={setPreco}
+                keyboardType={'numeric'}></TextInput>
                
             </ItemAnimado>
           )
         }}
 
       />
+
+      <View style={styles.total}>
+        <Text style={styles.txtTotal}>O Total da sua compra foi:</Text>
+      </View>
 
     </View>
   );

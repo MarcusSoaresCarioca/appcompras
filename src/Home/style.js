@@ -57,6 +57,16 @@ const styles = StyleSheet.create({
       paddingHorizontal: 25,
       alignSelf:'center'
     },
+
+    inputList:{
+      width:70,
+      height:30,
+      backgroundColor:"#fff",
+      borderRadius:15,
+      alignItems:'center',
+      justifyContent:'center',
+      paddingLeft: 20
+    },
     txtProd: {  
       fontWeight: '800',
       textAlign: 'center',
@@ -109,6 +119,19 @@ const styles = StyleSheet.create({
       position:'absolute',
       top:130,
       right:20, 
+    },
+
+    total:{
+      backgroundColor:'#2C87BF',
+      width:'100%',
+      height:50,
+      justifyContent:"center",
+      alignItems:'center'
+    },
+
+    txtTotal:{
+      color:"#fff",
+      fontSize:23
     }
 
   });
